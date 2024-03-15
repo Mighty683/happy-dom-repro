@@ -7,6 +7,9 @@ export class CustomElement extends HTMLElement {
     let button = this.shadowRoot!.querySelector<HTMLButtonElement>("#counter")!;
     button.innerHTML = this.getAttribute("count") || "0";
   }
+  connectedCallback() {
+    console.log("connectedCallback called");
+  }
   constructor() {
     super();
     let shadow = this.attachShadow({ mode: "open" });
